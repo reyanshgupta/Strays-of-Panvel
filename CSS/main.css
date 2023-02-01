@@ -43,22 +43,3 @@ h2{
     margin-left: 5%;
     margin-right: 5%;
 }
-
-.grid3x3{
-    width:300px;
-    height:300px;
-    clear:both;
-   }
-.grid3x3>div{
-    width:100px;
-    height:100px;
-    float:left;
-    line-height:100px;
-    text-align:center;    
-   }
-.grid3x3>div>img{
-    display:inline-block;
-    vertical-align:middle;
-    max-width:80%;
-    max-height:80%;
-   }
