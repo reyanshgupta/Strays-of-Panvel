@@ -1,0 +1,22 @@
+label{
+    font-weight: medium;
+    padding: 5px;
+    color: white;
+}
+form{
+    /*border: 2px solid black;*/
+    border: 2px solid black;
+    background-color: #20262E;
+    padding: 7px;
+    margin: 48px;
+}
+input[type=text] {
+    border-radius: 5px;
+    height: 20px; 
+    border: 1px solid white;
+    padding: 2px;
+}
+input[type=text]:focus {
+    border: 1px solid #FFFBF5;
+    padding: 20px;
+}
