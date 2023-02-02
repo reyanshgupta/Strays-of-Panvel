@@ -43,3 +43,14 @@ h2{
     margin-left: 5%;
     margin-right: 5%;
 }
+
+input[type=button]{
+    background-color:white; 
+    height: 40px; 
+    width: 10%;
+}
+input[type=reset]{
+    background-color:white; 
+    height: 40px; 
+    width: 10%;
+}
