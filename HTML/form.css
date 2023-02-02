@@ -9,6 +9,7 @@ form{
     background-color: #20262E;
     padding: 7px;
     margin: 48px;
+    margin-inline: 32px;
 }
 input[type=text] {
     border-radius: 5px;
