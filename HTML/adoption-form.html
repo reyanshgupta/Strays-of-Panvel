@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adoption Form</title>
+        <link rel="icon" href="../Images/SOPIcon.ico">
+        <link rel="stylesheet" type="text/css" href="../CSS/main.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/form.css">
+        <script LANGUAGE = "JavaScript" type="text/Javascript">
+            function display() {
+                Dispwin = window.open(); 
+                message = "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.mname.value + " " + document.adopt.lname.value+ "<br><br>";
+                message += "<br><br> <b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
+                message += "<b>E-mail: </b>" + document.adopt.email.value+"<br><br>"; 
+                message += "<b>Address: </b>" + document.getElementById("address").value + "<br><br>";
+                message+="<b><u>Pet's Details: </u></b> <br>"
+                message += "<br><br> <b>Pet's Name: </b>" + document.adopt.petname.value + "<br><br>";
+                message += "<br><br> <b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
+                message += "<br><br> <b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
+                message+= "<b>Gender: </b>" 
+                if(document.getElementById('Male').checked == true) {   
+                    message += "Male"; 
+                } 
+                else if (document.getElementById('Female').c hecked == true) 
+                {
+                    message+= "Female"
+                }  
+                else{
+                    message+="Others"
+                }
+                message += "<b>File: </b>" + document.adopt.myfile.value+"<br><br>";
+                Dispwin.document.write(message);
+            }
+        </script>
+    </head>
+    <body>
+    <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a class="active" href="adoption-form.html">Adopt Now!</a></li>
+        <li><a href="photogallery.html">Gallery</a></li>
+        <li><a href="aboutus.html">About</a></li>
+    </ul>
+       
+        <h1 align="center">Adopt a res-cute!</h1>
+        <img src="../Images/headerpic.png" style="display: block; margin-left: auto; margin-right: auto;" height="7%" width="7%">
+        <br>
+        <form name="adopt">
+            <br>
+
+            <h2 style="color: white;">&emsp;&nbsp;&nbsp;<b>ADOPTER'S DETAILS</b></h2><br>
+
+            &emsp;&emsp;<label>First Name:  </label><input type="text" name="fname" size="20" style="width: 18%;"/> &emsp;&emsp;  
+            &emsp;&emsp;<label>Middle Name: </label><input type="text" name="mname" size="20" style="width: 18%;"/> &emsp;&emsp;
+            &emsp;&emsp;<label>Last Name:   </label><input type="text" name="lname" size="20" style="width: 18%;"><br><br><br>
+
+            &emsp;&emsp;<label>Phone No.: </label><input type="text" name="phone" size="10" style="width: 18%;"/>
+            &emsp;&emsp;&emsp;&emsp;&nbsp;
+            <label>Email ID: </label><input type="email" id="email" name="email" size="20" style="width: 22%;"/>
+            <br><br><br>
+            &emsp;&emsp;
+            <label> Address:</label><br><br>
+            &emsp;&emsp;&nbsp;
+            <textarea cols="70" rows="6" name="address" value="address"></textarea>
+            <br><br>
+            <hr>
+
+            <h2 style="color: white;">&emsp;&nbsp;&nbsp;<b>PET'S DETAILS</b></h2><br>
+            &emsp;&emsp;<label>Pet's Name:</label> <input type="text" name="petname" size="20" style="width:18%;">&emsp;&emsp;
+            &emsp;&emsp;
+            &emsp;&emsp;<label>Pet's Age:</label> <input type="text" name="petage" size="2" style="width:18%;">
+            &emsp;&emsp;
+            &emsp;&emsp;<label>Pet's Breed:</label> <input type="text" name="petbreed" size="2" style="width:18%;"><br><br><br>
+            &emsp;&emsp;
+
+            <label>Gender:</label><br>
+            &emsp;&emsp;<input type="radio" name="gender" value="Male"/><label>Male</label><br>
+            &emsp;&emsp;<input type="radio" name="gender" value="Female"/><label>Female</label><br><br><br>
+            <hr>
+            <br>
+            &emsp;&emsp;<label>Applicant's Signature: </label><input type="File" name="signatureFile" size="30">
+            &emsp;&emsp;<br><br><br>
+        
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type = "button" value="Submit" onclick="display();" >&emsp;
+            <input type = "reset" value="Reset" >
+            <br><br>            
+        </form>
+    </body>
+</html>
