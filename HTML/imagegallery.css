@@ -1,0 +1,28 @@
+div.gallery {
+    margin: 5px;
+/*    border: 1px solid #ccc;*/
+    float: left;
+    width: 275px;
+    padding: 44px;
+/*    flex:25%*/
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 250px;
+    height: 280px;
+  }
+  
+  div.desc {
+    padding: 5px;
+    text-align: center;
+  }
+
+ div.space {
+    left: 10px;
+    right: 10px;
+    padding: 25px;
+  }
