@@ -14,8 +14,7 @@ h1{
 h2{
     color: #2b241d;
     
-}
-
+}   
 .imgintestimonials{
     border-radius: 20px;
 }
@@ -54,3 +53,9 @@ input[type=reset]{
     height: 40px; 
     width: 10%;
 }
+
+.left {
+    display: inline;
+    margin-left: none;
+    margin-right: auto;
+  }
