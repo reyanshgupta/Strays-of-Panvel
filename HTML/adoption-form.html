@@ -21,7 +21,7 @@
                 if(document.getElementById('Male').checked == true) {   
                     message += "Male"; 
                 } 
-                else if (document.getElementById('Female').c hecked == true) 
+                else if (document.getElementById('Female').checked == true) 
                 {
                     message+= "Female"
                 }  
@@ -34,14 +34,17 @@
         </script>
     </head>
     <body>
-        <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo.jpg" width="7%"></a>
-    <ul>
-        <li><a href="homepage.html">Home</a></li>
-        <li><a class="active" href="adoption-form.html">Adopt Now!</a></li>
-        <li><a href="photogallery.html">Gallery</a></li>
-        <li><a href="aboutus.html">About</a></li>
-    </ul>
-       
+        <header>
+            <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo.jpg" width="7%"></a>
+            <navbar>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a class="active" href="adoption-form.html">Adopt Now!</a></li>
+                <li><a href="photogallery.html">Gallery</a></li>
+                <li><a href="aboutus.html">About</a></li>
+            </ul>
+            </navbar>
+        </header>
         <h1 align="center">Adopt a res-cute!</h1>
         <img src="../Images/headerpic.png" style="display: block; margin-left: auto; margin-right: auto;" height="7%" width="7%">
         <br>
@@ -61,7 +64,7 @@
             &emsp;&emsp;
             <label> Address:</label><br><br>
             &emsp;&emsp;&nbsp;
-            <textarea cols="70" rows="6" name="address" value="address"></textarea>
+            <textarea cols="70" rows="6" name="address" id="address"></textarea>
             <br><br>
             <hr>
 
@@ -74,8 +77,8 @@
             &emsp;&emsp;
 
             <label>Gender:</label><br>
-            &emsp;&emsp;<input type="radio" name="gender" value="Male"/><label>Male</label><br>
-            &emsp;&emsp;<input type="radio" name="gender" value="Female"/><label>Female</label><br><br><br>
+            &emsp;&emsp;<input type="radio" name="gender" id="Male" value="Male"/><label>Male</label><br>
+            &emsp;&emsp;<input type="radio" name="gender" id="Female" value="Female"/><label>Female</label><br><br><br>
             <hr>
             <br>
             &emsp;&emsp;<label>Applicant's Signature: </label><input type="File" name="signatureFile" size="30">
@@ -83,7 +86,7 @@
         
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             <input type = "button" value="Submit" onclick="display();" >&emsp;
-            <input type = "reset" value="Reset" >
+            <input type = "reset" value="Reset">
             <br><br>            
         </form>
     </body>
