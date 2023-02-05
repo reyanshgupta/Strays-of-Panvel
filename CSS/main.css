@@ -11,12 +11,9 @@ p{
     color: #262626;
 }
 h1{
-/*    color: #03011a;*/
       color: black;
-/*      margin-top: 48px;*/
 }
 h2{
-/*    color: #2b241d;*/
       color: black;
 }   
 .imgintestimonials{
@@ -38,7 +35,10 @@ h2{
 }
 
 .column33{
-    flex:33%
+    flex:33%;
+    margin: 13px;
+    border: solid black 2px;
+    padding: 5px;
 }
 
 .testimony{
