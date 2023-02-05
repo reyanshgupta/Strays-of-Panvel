@@ -3,7 +3,10 @@ navbar ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #0E0741;
+/*    background-color: #DC3535;*/
+    background-color:black ;
+
+/*    background-color: #0E0741;*/
   }
 navbar li {
     display: inline; 
@@ -18,15 +21,19 @@ navbar  a {
   }
 navbar li a{ /*for text decoration*/
     display: block;
-    color: white;
+    color: whitesmoke;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
   
 navbar li a:hover { /* hover*/
-    background-color: #ababb9 ;
-  }
+/*    background-color: #ababb9 ;*/
+      background-color: #E97777;
+
+}
 navbar .active{
-  background-color: #8236fd;
+/*  background-color: #8236fd;*/
+    background-color: #F49D1A;
+
 }
