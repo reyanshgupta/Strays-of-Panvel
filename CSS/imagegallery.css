@@ -2,6 +2,8 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   border: 5px solid black;
   }
 div.gallery {
@@ -14,6 +16,7 @@ div.gallery {
   
 div.gallery:hover {
   border: 1px solid #777;
+  transform: scale(1, 1.1);
   }
   
 div.gallery img {
