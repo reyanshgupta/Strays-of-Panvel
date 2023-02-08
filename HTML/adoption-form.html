@@ -9,26 +9,27 @@
         <script LANGUAGE = "JavaScript" type="text/Javascript">
             function display() {
                 Dispwin = window.open(); 
-                message = "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.mname.value + " " + document.adopt.lname.value+ "<br><br>";
-                message += "<br><br> <b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
+                message ="<b><u>Personal Details: </u></b><br><br>";
+                message += "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.mname.value + " " + document.adopt.lname.value+ "<br><br>";
+                message += "<b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
                 message += "<b>E-mail: </b>" + document.adopt.email.value+"<br><br>"; 
                 message += "<b>Address: </b>" + document.getElementById("address").value + "<br><br>";
-                message+="<b><u>Pet's Details: </u></b> <br>"
+                message +="<b><u>Pet's Details: </u></b>";
                 message += "<br><br> <b>Pet's Name: </b>" + document.adopt.petname.value + "<br><br>";
-                message += "<br><br> <b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
-                message += "<br><br> <b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
-                message+= "<b>Gender: </b>" 
+                message += "<b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
+                message += "<b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
+                message += "<b>Gender: </b>" 
                 if(document.getElementById('Male').checked == true) {   
-                    message += "Male"; 
+                    message += "Male <br><br>"; 
                 } 
                 else if (document.getElementById('Female').checked == true) 
                 {
-                    message+= "Female"
+                    message+= "Female<br><br>"
                 }  
                 else{
-                    message+="Others"
+                    message+="Others<br><br>"
                 }
-                message += "<b>File: </b>" + document.adopt.myfile.value+"<br><br>";
+                message += "<b>File: </b>" + document.adopt.signatureFile.value+"<br><br>";
                 Dispwin.document.write(message);
             }
         </script>
