@@ -11,28 +11,28 @@
                 function printError(elemId, hintMsg) {
                 document.getElementById(elemId).innerHTML = hintMsg;
                 }
-                // function display() {
-                //         Dispwin = window.open();
-                //         message ="<b><u>Personal Details: </u></b><br><br>";
-                //         message += "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.lname.value + "<br><br>";
-                //         message += "<b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
-                //         message += "<b>E-mail: </b>" + document.adopt.email.value + "<br><br>";
-                //         message += "<b>Address: </b>" + document.adopt.address.value + "<br><br>";
-                //         message +="<b><u>Pet's Details: </u></b>";
-                //         message += "<br><br> <b>Pet's Name: </b>" + document.adopt.petname.value + "<br><br>";
-                //         message += "<b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
-                //         message += "<b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
-                //         message += "<b>Gender: </b>";
-                //         if (document.adopt.gender.value == 'Male') {
-                //             message += "Male <br><br>";
-                //         } else if (document.adopt.gender.value == 'Female') {
-                //             message+= "Female<br><br>";
-                //         } else {
-                //             message+="Others<br><br>";
-                //         }
-                //         message += "<b>File: </b>" + document.adopt.signatureFile.value + "<br><br>";
-                //         Dispwin.document.write(message);
-                // }
+                function display() {
+                        Dispwin = window.open();
+                        message ="<b><u>Personal Details: </u></b><br><br>";
+                        message += "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.lname.value + "<br><br>";
+                        message += "<b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
+                        message += "<b>E-mail: </b>" + document.adopt.email.value + "<br><br>";
+                        message += "<b>Address: </b>" + document.adopt.address.value + "<br><br>";
+                        message +="<b><u>Pet's Details: </u></b>";
+                        message += "<br><br> <b>Pet's Name: </b>" + document.adopt.petname.value + "<br><br>";
+                        message += "<b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
+                        message += "<b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
+                        message += "<b>Gender: </b>";
+                        if (document.adopt.gender.value == 'Male') {
+                            message += "Male <br><br>";
+                        } else if (document.adopt.gender.value == 'Female') {
+                            message+= "Female<br><br>";
+                        } else {
+                            message+="Others<br><br>";
+                        }
+                        message += "<b>File: </b>" + document.adopt.signatureFile.value + "<br><br>";
+                        Dispwin.document.write(message);
+                }
                 function validateForm(){
                     var nameErr = emailErr = phoneErr= true;
                     var name = document.adopt.fname.value+document.adopt.lname.value;
@@ -153,7 +153,7 @@
                     <td><input type="File" name="signatureFile" size="30"></td>
                 </tr>
                 <tr>
-                    <td align="center"><button type="submit" id="submit">Submit</button></td>
+                    <td align="center"><button type="submit" id="submit" onclick="display();">Submit</button></td>
                     <td align="center"><button type = "reset" value="Reset"> Reset</td>
                 </tr>   
             </table>         

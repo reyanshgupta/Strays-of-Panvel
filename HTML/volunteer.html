@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="../CSS/form.css">
     <link rel="stylesheet" type="text/css" href="../CSS/animations.css">
     <script LANGUAGE = "JavaScript" type="text/Javascript">
+            function printError(elemId, hintMsg) {
+                document.getElementById(elemId).innerHTML = hintMsg;
+                }
             function display() {
                 Dispwin = window.open(); 
                 message = "<br>Your application has been submitted successfully.";
@@ -29,84 +32,157 @@
                 } 
                 Dispwin.document.write(message);}
 
+                function validateForm(){
+                    var nameErr = emailErr = phoneErr= true;
+                    var name = document.volunteer.fname.value+document.volunteer.lname.value;
+                    var email = document.volunteer.email.value;
+                    var phone = document.volunteer.phone.value;
+
+                    // Validate name
+                    if(name == "") {
+                        printError("nameErr", "Please enter your name");
+                    } else {
+                        var regex = /^[a-zA-Z\s]+$/;                
+                        if(regex.test(name) == false) {
+                            printError("nameErr", "Please enter a valid name");
+                        } else {
+                            printError("nameErr", "");
+                            nameErr = false;
+                        }
+                    }   
+
+                    // Validate email address
+                    if(email == "") {
+                        printError("emailErr", "Please enter your email address");
+                    } else {
+                        // Regular expression for basic email validation
+                        var regex = /^\S+@\S+\.\S+$/;
+                        if(regex.test(email) === false) {
+                            printError("emailErr", "Please enter a valid email address");
+                        } else{
+                            printError("emailErr", ""); 
+                            emailErr = false;
+                        }
+                    }
+                    // Validate mobile number
+                    if(phone == "") {
+                        printError("phoneErr", "Please enter your mobile number");
+                    } else {
+                        var regex = /^[1-9]\d{9}$/;
+                        if(regex.test(phone) === false) {
+                            printError("phoneErr", "Please enter a valid 10 digit mobile number");
+                        } else{
+                            printError("phoneErr", "");
+                            phoneErr = false;
+                        }
+                    }
+                    if (nameErr || emailErr || phoneErr) {
+                         document.getElementById("submit").disabled = true;
+                    } else {
+                    document.getElementById("submit").disabled = false;
+                    }
+                    
+                };
+
     </script>
 </head>
 <body>
     <header>
-    <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo1.png" width="8.5%"></a>
-    <navbar>
-    <ul>
-        <li><a class="active" href="homepage.html">Home</a></li>
-        <li><a href="adoption-form.html">Adopt Now!</a></li>
-        <li><a href="photogallery.html">Gallery</a></li>
-        <li><a href="aboutus.html">About</a></li>
-    </ul>
-    </navbar>
-</header>
-<h1 align="center">Volunteer With Us!
+        <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo1.png" width="8.5%"></a>
+        <navbar>
+            <ul>
+                <li><a class="active" href="homepage.html">Home</a></li>
+                <li><a href="adoption-form.html">Adopt Now!</a></li>
+                <li><a href="photogallery.html">Gallery</a></li>
+                <li><a href="aboutus.html">About</a></li>
+            </ul>
+        </navbar>
+    </header>
+    <h1 align="center">Volunteer With Us!
     <div><img src="../Images/headerpic2.png"  style="display: block; margin-left: auto; margin-right: auto; " height="25%" width="25%"></div>
-</h1>
-<br>
-<form name="volunteer">
-    <br>
-    <h2 style="color: white;">&emsp;&nbsp;&nbsp;<b>PERSONAL DETAILS</b></h2><br>
-    &emsp;&emsp;<label>First Name:  </label><input type="text" name="fname" size="20" style="width: 18%;"/> &emsp;&emsp;  
-    &emsp;&emsp;<label>Middle Name: </label><input type="text" name="mname" size="20" style="width: 18%;"/> &emsp;&emsp;
-    &emsp;&emsp;<label>Last Name:   </label><input type="text" name="lname" size="20" style="width: 18%;"><br><br><br>
-
-    &emsp;&emsp;<label>Phone No.: </label><input type="text" name="phone" size="10" style="width: 18%;"/>
-    &emsp;&emsp;&emsp;&emsp;&nbsp;
-    <label>Email ID: </label><input type="email" id="email" name="email" size="20" style="width: 22%;"/>
-    <br><br>
-    <hr>
-    &emsp;&emsp;
-    <h2 style="color: white;">&emsp;&nbsp;&nbsp;<b>ADDRESS DETAILS</b></h2><br>
-    &emsp;&emsp;<label> Street: </label><input type="text" name="street" size="20" style="width: 18%;"/> &emsp;&emsp;&emsp;&nbsp;&nbsp;
-    &emsp;&emsp;<label> City: </label><input type="text" name="city" size="20" style="width: 18%;"/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    &emsp;&emsp;<label> Zip Code: </label><input type="text" name="zipcode" size="6" style="width: 18%;"/> &emsp;&emsp;
-    <br><br><br>
-    &emsp;&emsp;
-    <label>State: </label>&nbsp;
-    <select name="state" style="width:18%;">
-        <option value="State">States</option>
-        <option value="Andhra Pradesh">Andhra Pradesh</option>
-        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-        <option value="Assam">Assam</option>
-        <option value="Bihar">Bihar</option>
-        <option value="Chhattisgarh">Chhattisgarh</option>
-        <option value="Goa">Goa</option>
-        <option value="Gujarat">Gujarat</option>
-        <option value="Haryana">Haryana</option>
-        <option value="Himachal Pradesh">Himachal Pradesh</option>
-        <option value="Jharkhand">Jharkhand</option>
-        <option value="Karnataka">Karnataka</option>
-        <option value="Kerala">Kerala</option>
-        <option value="Madhya Pradesh">Madhya Pradesh</option>
-        <option value="Maharashtra">Maharashtra</option>
-        <option value="Manipur">Manipur</option>
-        <option value="Meghalaya">Meghalaya</option>
-        <option value="Mizoram">Mizoram</option>
-        <option value="Nagaland">Nagaland</option>
-        <option value="Odisha">Odisha</option>
-        <option value="Punjab">Punjab</option>
-        <option value="Rajasthan">Rajasthan</option>
-        <option value="Sikkim">Sikkim</option>
-        <option value="Tamil Nadu">Tamil Nadu</option>
-        <option value="Talnagana">Telangana</option>
-        <option value="Uttar Pradesh">Uttar Pradesh</option>
-        <option value="Uttarakhand">Uttarakhand</option>
-        <option value="West Bengal">West Bengal</option>
-    </select><br><br><br>
-    <hr>
-    <br>
-    &emsp;&emsp;
-    <label>Do you work with any other rescue organizations? </label><br><br>
-    &emsp;&emsp;<input type="radio" name="ans" id="Yes" value="Yes"/><label>Yes</label><br>
-    &emsp;&emsp;<input type="radio" name="ans" id="No" value="No"/><label>No</label><br><br><br>
-    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <input type = "button" value="Submit" onclick="display();"> &emsp;
-    <input type = "reset" value="Reset">
-    <br><br>
-</form>
+    </h1>
+    <form name="volunteer">
+        <table>
+        <tr>
+            <td><h2 style="color: white;"><b>PERSONAL DETAILS</b></h2><br></td>
+        </tr>
+        <tr>
+            <td><label>First Name:  </label></td>
+            <td><input type="text" name="fname" id="fname" size="20" onkeyup="validateForm();"></td>
+            <td><label>Last Name:   </label></td>
+            <td><input type="text" name="lname" id="lname" size="20" onkeyup="validateForm();"></td>   
+            <td><span id="nameErr" class="errormessage"></span></td>
+        </tr>
+        <tr>
+            <td><label>Phone Number: </label></td>
+            <td><input type="text" name="phone" id="phone" size="20" onkeyup="validateForm();"></td>
+            <td><span id="phoneErr" class="errormessage"></span></td>
+        </tr>   
+        <tr>
+            <td><label>Email ID: </label></td>
+            <td><input type="text" id="email" name="email" size="20" onkeyup="validateForm();"></td>
+            <td><span id="emailErr" class="errormessage"></span></td>
+        </tr>
+        <br><br>
+        <tr>
+            <td> <h2 style="color: white;"><b>ADDRESS DETAILS</b></h2><br></td>
+        </tr>
+        <tr>
+            <td><label> Street: </label></td>
+            <td><input type="text" name="street" size="20"/></td>
+        </tr>
+        <tr>
+            <td><label> City: </label></td>
+            <td><input type="text" name="city" size="20" /></td>
+        </tr>
+        <tr>
+            <td><label> Zip Code: </label></td>
+            <td><input type="text" name="zipcode" size="6" /> </td>
+        </tr>
+        <br><br><br>
+        <tr>
+            <td><label>State: </label></td>
+            <td><select name="state" >
+                <option value="State">States</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Talnagana">Telangana</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+            </select</td>
+        </tr>
+        <tr>
+            <td><label>Do you work with any other rescue organizations? </label><br><br></td>
+            <td><input type="radio" name="ans" id="Yes" value="Yes"/><label>Yes</label></td>
+            <td><input type="radio" name="ans" id="No" value="No"/><label>No</label></td>
+        </tr>
+        <tr>
+            <td><input type = "button" value="Submit" onclick="display();"> </td>
+            <td><input type = "reset" value="Reset"></td>
+        </tr>
+        </table>
+    </form>
 </body>
 </html>
