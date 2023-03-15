@@ -1,94 +1,162 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Adoption Form</title>
-        <link rel="icon" href="../Images/SOPIcon.ico">
-        <link rel="stylesheet" type="text/css" href="../CSS/main.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/form.css">
-        <script LANGUAGE = "JavaScript" type="text/Javascript">
-            function display() {
-                Dispwin = window.open(); 
-                message ="<b><u>Personal Details: </u></b><br><br>";
-                message += "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.mname.value + " " + document.adopt.lname.value+ "<br><br>";
-                message += "<b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
-                message += "<b>E-mail: </b>" + document.adopt.email.value+"<br><br>"; 
-                message += "<b>Address: </b>" + document.getElementById("address").value + "<br><br>";
-                message +="<b><u>Pet's Details: </u></b>";
-                message += "<br><br> <b>Pet's Name: </b>" + document.adopt.petname.value + "<br><br>";
-                message += "<b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
-                message += "<b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
-                message += "<b>Gender: </b>" 
-                if(document.getElementById('Male').checked == true) {   
-                    message += "Male <br><br>"; 
-                } 
-                else if (document.getElementById('Female').checked == true) 
-                {
-                    message+= "Female<br><br>"
-                }  
-                else{
-                    message+="Others<br><br>"
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Adoption Form</title>
+            <link rel="icon" href="../Images/SOPIcon.ico">
+            <link rel="stylesheet" type="text/css" href="../CSS/main.css">
+            <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
+            <link rel="stylesheet" type="text/css" href="../CSS/form.css">
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+            <script>
+                function printError(elemId, hintMsg) {
+                document.getElementById(elemId).innerHTML = hintMsg;
                 }
-                message += "<b>File: </b>" + document.adopt.signatureFile.value+"<br><br>";
-                Dispwin.document.write(message);
-            }
-        </script>
-    </head>
-    <body>
-        <header>
-            <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo1.png" width="8.5%"></a>
-            <navbar>
-            <ul>
-                <li><a href="homepage.html">Home</a></li>
-                <li><a class="active" href="adoption-form.html">Adopt Now!</a></li>
-                <li><a href="photogallery.html">Gallery</a></li>
-                <li><a href="aboutus.html">About</a></li>
-            </ul>
-            </navbar>
-        </header>
-        <h1 align="center">Adopt a res-cute!</h1>
-        <img src="../Images/headerpic.png" style="display: block; margin-left: auto; margin-right: auto;" height="7%" width="7%">
-        <br>
-        <form name="adopt">
+                // function display() {
+                //         Dispwin = window.open();
+                //         message ="<b><u>Personal Details: </u></b><br><br>";
+                //         message += "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.lname.value + "<br><br>";
+                //         message += "<b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
+                //         message += "<b>E-mail: </b>" + document.adopt.email.value + "<br><br>";
+                //         message += "<b>Address: </b>" + document.adopt.address.value + "<br><br>";
+                //         message +="<b><u>Pet's Details: </u></b>";
+                //         message += "<br><br> <b>Pet's Name: </b>" + document.adopt.petname.value + "<br><br>";
+                //         message += "<b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
+                //         message += "<b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
+                //         message += "<b>Gender: </b>";
+                //         if (document.adopt.gender.value == 'Male') {
+                //             message += "Male <br><br>";
+                //         } else if (document.adopt.gender.value == 'Female') {
+                //             message+= "Female<br><br>";
+                //         } else {
+                //             message+="Others<br><br>";
+                //         }
+                //         message += "<b>File: </b>" + document.adopt.signatureFile.value + "<br><br>";
+                //         Dispwin.document.write(message);
+                // }
+                function validateForm(){
+                    var nameErr = emailErr = phoneErr= true;
+                    var name = document.adopt.fname.value+document.adopt.lname.value;
+                    var email = document.adopt.email.value;
+                    var phone = document.adopt.phone.value;
+
+                    // Validate name
+                    if(name == "") {
+                        printError("nameErr", "Please enter your name");
+                    } else {
+                        var regex = /^[a-zA-Z\s]+$/;                
+                        if(regex.test(name) == false) {
+                            printError("nameErr", "Please enter a valid name");
+                        } else {
+                            printError("nameErr", "");
+                            nameErr = false;
+                        }
+                    }   
+
+                    // Validate email address
+                    if(email == "") {
+                        printError("emailErr", "Please enter your email address");
+                    } else {
+                        // Regular expression for basic email validation
+                        var regex = /^\S+@\S+\.\S+$/;
+                        if(regex.test(email) === false) {
+                            printError("emailErr", "Please enter a valid email address");
+                        } else{
+                            printError("emailErr", ""); 
+                            emailErr = false;
+                        }
+                    }
+                    // Validate mobile number
+                    if(phone == "") {
+                        printError("phoneErr", "Please enter your mobile number");
+                    } else {
+                        var regex = /^[1-9]\d{9}$/;
+                        if(regex.test(phone) === false) {
+                            printError("phoneErr", "Please enter a valid 10 digit mobile number");
+                        } else{
+                            printError("phoneErr", "");
+                            phoneErr = false;
+                        }
+                    }
+                    if (nameErr || emailErr || phoneErr) {
+                         document.getElementById("submit").disabled = true;
+                    } else {
+                    document.getElementById("submit").disabled = false;
+                    }
+                    
+                };
+            </script>        
+        </head>
+        <body>
+            <header>
+                <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo1.png" width="8.5%"></a>
+                <navbar>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a class="active" href="adoption-form.html">Adopt Now!</a></li>
+                    <li><a href="photogallery.html">Gallery</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                </ul>
+                </navbar>
+            </header>
+            <h1 align="center">Adopt a res-cute!</h1>
+            <img src="../Images/headerpic.png" style="display: block; margin-left: auto; margin-right: auto;" height="7%" width="7%">
             <br>
-
-            <h2 style="color: white;">&emsp;&nbsp;&nbsp;<b>ADOPTER'S DETAILS</b></h2><br>
-
-            &emsp;&emsp;<label>First Name:  </label><input type="text" name="fname" size="20" style="width: 18%;"/> &emsp;&emsp;  
-            &emsp;&emsp;<label>Middle Name: </label><input type="text" name="mname" size="20" style="width: 18%;"/> &emsp;&emsp;
-            &emsp;&emsp;<label>Last Name:   </label><input type="text" name="lname" size="20" style="width: 18%;"><br><br><br>
-
-            &emsp;&emsp;<label>Phone No.: </label><input type="text" name="phone" size="10" style="width: 18%;"/>
-            &emsp;&emsp;&emsp;&emsp;&nbsp;
-            <label>Email ID: </label><input type="email" id="email" name="email" size="20" style="width: 22%;"/>
-            <br><br><br>
-            &emsp;&emsp;
-            <label> Address:</label><br><br>
-            &emsp;&emsp;&nbsp;
-            <textarea cols="70" rows="6" name="address" id="address"></textarea>
-            <br><br>
-            <hr>
-
-            <h2 style="color: white;">&emsp;&nbsp;&nbsp;<b>PET'S DETAILS</b></h2><br>
-            &emsp;&emsp;<label>Pet's Name:</label> <input type="text" name="petname" size="20" style="width:18%;">&emsp;&emsp;
-            &emsp;&emsp;
-            &emsp;&emsp;<label>Pet's Age:</label> <input type="text" name="petage" size="2" style="width:18%;">
-            &emsp;&emsp;
-            &emsp;&emsp;<label>Pet's Breed:</label> <input type="text" name="petbreed" size="2" style="width:18%;"><br><br><br>
-            &emsp;&emsp;
-
-            <label>Gender:</label><br>
-            &emsp;&emsp;<input type="radio" name="gender" id="Male" value="Male"/><label>Male</label><br>
-            &emsp;&emsp;<input type="radio" name="gender" id="Female" value="Female"/><label>Female</label><br><br><br>
-            <hr>
-            <br>
-            &emsp;&emsp;<label>Applicant's Signature: </label><input type="File" name="signatureFile" size="30">
-            &emsp;&emsp;<br><br><br>
-        
-            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            <input type = "button" value="Submit" onclick="display();"> &emsp;
-            <input type = "reset" value="Reset">
-            <br><br>            
-        </form>
-    </body>
-</html>
+            <form name="adopt">
+                <table>
+                <tr>
+                <td><h2 style="color: white;"><b>ADOPTER'S DETAILS</b></h2></td>
+                </tr>
+                <tr>
+                    <td><label>First Name:  </label></td>
+                    <td><input type="text" name="fname" id="fname" size="20" onkeyup="validateForm();"></td>
+                    <td><label>Last Name:   </label></td>
+                    <td><input type="text" name="lname" id="lname" size="20" onkeyup="validateForm();"></td>   
+                    <td><span id="nameErr" class="errormessage"></span></td>
+                </tr>
+                <tr>
+                    <td><label>Phone Number: </label></td>
+                    <td><input type="text" name="phone" id="phone" size="20" onkeyup="validateForm();"></td>
+                    <td><span id="phoneErr" class="errormessage"></span></td>
+                </tr>   
+                <tr>
+                    <td><label>Email ID: </label></td>
+                    <td><input type="text" id="email" name="email" size="20" onkeyup="validateForm();"></td>
+                    <td><span id="emailErr" class="errormessage"></span></td>
+                </tr>
+                <tr>
+                    <td><label> Address:</label><br><br></td>
+                    <td><textarea cols="70" rows="6" name="address" id="address"></textarea></td>
+                    <td><span id="addressErr"></span></td>
+                </tr>
+                <tr>
+                    <td><h2 style="color: white;"><b>PET'S DETAILS</b></h2></td>
+                </tr>
+                <tr>
+                    <td><label>Pet's Name:</label></td>
+                    <td><input type="text" name="petname" id = "petname" size="20" style="width:18%;"></td>
+                </tr>
+                <tr>
+                    <td><label>Pet's Age:</label> </td>
+                    <td><input type="text" name="petage" id="petage" size="2" style="width:18%;"></td>
+                </tr>
+                <tr>
+                    <td><label>Pet's Breed:</label> </td>
+                    <td><input type="text" name="petbreed" id="petbreed" size="2" style="width:18%;"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td><input type="radio" name="gender" id="Male" value="Male"><label>Male</label></td>
+                    <td><input type="radio" name="gender" id="Female" value="Female" ><label>Female</label></td>
+                </tr>
+                <tr>
+                    <td><label>Applicant's Signature: </label></td>
+                    <td><input type="File" name="signatureFile" size="30"></td>
+                </tr>
+                <tr>
+                    <td align="center"><button type="submit" id="submit">Submit</button></td>
+                    <td align="center"><button type = "reset" value="Reset"> Reset</td>
+                </tr>   
+            </table>         
+            </form>
+        </body>
+    </html>
