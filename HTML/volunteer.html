@@ -123,7 +123,6 @@
             <td><input type="text" id="email" name="email" size="20" onkeyup="validateForm();"></td>
             <td><span id="emailErr" class="errormessage"></span></td>
         </tr>
-        <br><br>
         <tr>
             <td> <h2 style="color: white;"><b>ADDRESS DETAILS</b></h2><br></td>
         </tr>
@@ -139,7 +138,6 @@
             <td><label> Zip Code: </label></td>
             <td><input type="text" name="zipcode" size="6" /> </td>
         </tr>
-        <br><br><br>
         <tr>
             <td><label>State: </label></td>
             <td><select name="state" >
@@ -178,9 +176,12 @@
             <td><input type="radio" name="ans" id="Yes" value="Yes"/><label>Yes</label></td>
             <td><input type="radio" name="ans" id="No" value="No"/><label>No</label></td>
         </tr>
+        <td><br></td>
         <tr>
-            <td><button type = "button" value="Submit" onclick="display();"> Submit </button></td>
-            <td><button type = "reset" value="Reset">Reset </button> </td>
+            
+            <td align="left">
+            <button type = "button" value="Submit" onclick="display();"> Submit </button>
+            <button type = "reset" value="Reset">Reset </button></td>
         </tr>
         </table>
     </form>
