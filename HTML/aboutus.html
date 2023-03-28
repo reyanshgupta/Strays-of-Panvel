@@ -22,13 +22,36 @@
             .icon:hover {
             opacity: 0.7;
             }
+        
+            /*faq*/
+            .faq {
+            max-width: 600px;
+            margin: 0 auto;
+            }
+
+            .faq-question {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            }
+
+            .faq-question-title {
+            margin: 0;
+            padding: 10px;
+            cursor: pointer;
+            }
+
+            .faq-answer {
+            padding: 10px;
+            display: none;
+            }
+
+            .faq-question.active .faq-answer {
+            display: block;
+            }
         </style>
-        <script> 
-            function toggleAnswer(id) {
-            var answer = document.getElementById(id);
-            answer.classList.toggle("show");
-        }
-    </script>
+
     </head>
     <body>
         <header>
@@ -50,22 +73,34 @@
         <ul>
         <li><a href="https://www.instagram.com/strays_of_panvel/" class="icon" target="_blank"><img class="center" src="../Images/instalogo.png" width="30px"></a></li>
         </ul>
-    <h1>FAQ Form</h1>
-    <p>Have a question about our rescue dogs? Check out our frequently asked questions below:</p>
-    <ul>
-        <li>
-            <span class="question" onclick="toggleAnswer('answer1');">How do I adopt a dog?</span>
-            <p id="answer1" class="answer">To adopt a dog, please fill out our adoption application and our adoption team will be in touch with you.</p>
-        </li>
-        <li>
-            <span class="question" onclick="toggleAnswer('answer2');">What is the adoption fee?</span>
-            <p id="answer2" class="answer">Our adoption fee is $200 per dog.</p>
-        </li>
-        <li>
-            <span class="question" onclick="toggleAnswer('answer3');">Do you have dogs for people with allergies?</span>
-            <p id="answer3" class="answer">We cannot guarantee that any of our dogs will be hypoallergenic, but we do have some dogs that are less likely to cause an allergic reaction.</p>
-        </li>
-    </ul>
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-question">
+          <h3 class="faq-question-title">How do I adopt a dog?</h3>
+          <div class="faq-answer">
+            <p>To adopt a dog, please fill out our adoption application and our adoption team will be in touch with you.</p>
+          </div>
+        </div>
+        <div class="faq-question">
+          <h3 class="faq-question-title">What is the adoption fee?</h3>
+          <div class="faq-answer">
+            <p>Our adoption fee is $200 per dog..</p>
+          </div>
+        </div>
+        <div class="faq-question">
+          <h3 class="faq-question-title">Do you have dogs for people with allergies?</h3>
+          <div class="faq-answer">
+            <p>We cannot guarantee that any of our dogs will be hypoallergenic, but we do have some dogs that are less likely to cause an allergic reaction.</p>
+          </div>
+        </div>
+      </div>
+      <script> 
+        document.querySelectorAll('.faq-question-title').forEach(title => {
+        title.addEventListener('click', () => {
+            title.parentElement.classList.toggle('active');
+        });
+        });
+    </script>
     <p>If you have a question that isn't answered here, please fill out the form below:</p>
     <form>
         <label for="question">Your question:</label><br>
