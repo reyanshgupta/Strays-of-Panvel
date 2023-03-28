@@ -12,25 +12,27 @@
                 document.getElementById(elemId).innerHTML = hintMsg;
                 }
             function display() {
-                Dispwin = window.open(); 
-                message = "<br>Your application has been submitted successfully.";
-                message +="<hr> <br>";
-                message +="<b><u>Personal Details: </u></b><br><br>";
-                message += "<b>Name: </b>" + document.volunteer.fname.value + " " + document.volunteer.mname.value + " " + document.volunteer.lname.value+ "<br><br>";
-                message += "<b>Phone: </b>" + document.volunteer.phone.value + "<br><br>";
-                message += "<b>E-mail: </b>" + document.volunteer.email.value+"<br><br>"; 
-                message +="<b><u>Pet's Details: </u></b><br> <br>"
-                message += "<b>Address: </b>" + document.volunteer.street.value + " , " + document.volunteer.city.value + " " + document.volunteer.zipcode.value+ "<br><br>";
-                message += "<b>State: </b>" + document.volunteer.state.value + "<br><br>";
-                message += "<b>Do you work with any other rescue organizations?: </b>" 
-                if(document.getElementById('Yes').checked == true) {   
-                    message += "Yes"; 
-                } 
-                else (document.getElementById('No').checked == true) 
-                {
-                    message+= "No"
-                } 
-                Dispwin.document.write(message);}
+                // Dispwin = window.open(); 
+                // message = "<br>Your application has been submitted successfully.";
+                // message +="<hr> <br>";
+                // message +="<b><u>Personal Details: </u></b><br><br>";
+                // message += "<b>Name: </b>" + document.volunteer.fname.value + " " + document.volunteer.mname.value + " " + document.volunteer.lname.value+ "<br><br>";
+                // message += "<b>Phone: </b>" + document.volunteer.phone.value + "<br><br>";
+                // message += "<b>E-mail: </b>" + document.volunteer.email.value+"<br><br>"; 
+                // message +="<b><u>Pet's Details: </u></b><br> <br>"
+                // message += "<b>Address: </b>" + document.volunteer.street.value + " , " + document.volunteer.city.value + " " + document.volunteer.zipcode.value+ "<br><br>";
+                // message += "<b>State: </b>" + document.volunteer.state.value + "<br><br>";
+                // message += "<b>Do you work with any other rescue organizations?: </b>" 
+                // if(document.getElementById('Yes').checked == true) {   
+                //     message += "Yes"; 
+                // } 
+                // else (document.getElementById('No').checked == true) 
+                // {
+                //     message+= "No"
+                // } 
+                // Dispwin.document.write(message);
+                alert("Request Submitted Successfully");
+            }
 
                 function validateForm(){
                     var nameErr = emailErr = phoneErr= true;
