@@ -6,7 +6,8 @@
             <link rel="stylesheet" type="text/css" href="../CSS/main.css">
             <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
             <link rel="stylesheet" type="text/css" href="../CSS/form.css">
-            <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+            <!-- <script src="../JS/db.js"></script> -->
             <script>
                 function printError(elemId, hintMsg) {
                 document.getElementById(elemId).innerHTML = hintMsg;
@@ -38,6 +39,16 @@
                     var name = document.adopt.fname.value+document.adopt.lname.value;
                     var email = document.adopt.email.value;
                     var phone = document.adopt.phone.value;
+                    var petname = document.adopt.petname.value;
+                    var petage = document.adopt.petage.value;
+                    var petbreed = document.adopt.petbreed.value;
+                    if (document.adopt.gender.value == 'Male') {
+                            var gender = "Male";
+                        } else if (document.adopt.gender.value == 'Female') {
+                            var gender = "Female";
+                        } else {
+                            var gender = "Others";
+                        }
 
                     // Validate name
                     if(name == "") {
@@ -84,7 +95,7 @@
                     }
                     
                 };
-            </script>        
+            </script>  
         </head>
         <body>
             <header>
@@ -101,7 +112,7 @@
             <h1 align="center">Adopt a res-cute!</h1>
             <img src="../Images/headerpic.png" style="display: block; margin-left: auto; margin-right: auto;" height="7%" width="7%">
             <br>
-            <form name="adopt">
+            <form name="adopt" action="/add" method="post"">
                 <table>
                 <tr>
                 <td><h2 style="color: white;"><b>ADOPTER'S DETAILS</b></h2></td>
@@ -153,10 +164,34 @@
                     <td><input type="File" name="signatureFile" size="30"></td>
                 </tr>
                 <tr>
-                    <td align="center"><button type="submit" id="submit" onclick="display();">Submit</button></td>
+                    <td align="center"><button type="submit" id="submit">Submit</button></td>
                     <td align="center"><button type = "reset" value="Reset"> Reset</td>
                 </tr>   
             </table>         
             </form>
         </body>
+        <script>
+            var name = document.adopt.fname.value+document.adopt.lname.value;
+            var email = document.adopt.email.value;
+            var phone = document.adopt.phone.value;
+            var petname = document.adopt.petname.value;
+            var petage = document.adopt.petage.value;
+            var petbreed = document.adopt.petbreed.value;
+            const express = require('express');
+            const app = express();
+            const port = 5500;
+            app.post('/add', (req, res) => {
+            const sql = `INSERT INTO adoptionrequests VALUES ('${name}', '${email}', '${phone}',  '${petname}', '${petage}', '${petbreed}',)`;
+            connection.query(sql, (err, result) => {
+                if (err) throw err;
+                alert('Request Raised Successfuly!')
+                res.redirect('');
+            });
+            });
+
+            // Start the server
+            app.listen(port, () => {
+            console.log(`Server running at http://localhost:${port}`);
+            });
+        </script>
     </html>

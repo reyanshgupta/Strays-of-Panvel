@@ -41,13 +41,6 @@ h2{
     padding: 5px;
 }
 
-.testimony{
-    border: 2px solid black;
-    padding: 5px;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 .left {
     display: inline;
     margin-left: none;
@@ -75,3 +68,35 @@ button{
    position: relative; 
    top: 10%;
 }
+
+    .testimonials {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .testimonial {
+    margin: 50px auto;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+  }
+  
+  .testimonial p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .testimonial .author {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    }
