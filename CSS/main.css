@@ -61,14 +61,13 @@ button{
     font-size: 16px;
     letter-spacing: 1px;
     padding: 12px 20px;
-    /* border: black 5px; */
     border-radius: 30px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 
-  button:hover {
+button:hover {
     background-color: grey;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   }
@@ -79,41 +78,50 @@ button{
    top: 10%;
 }
 
-    .testimonials {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px 0;
-    text-align: center;
-  }
-  
-  .testimonial {
+.testimonial {
     margin: 50px auto;
     max-width: 500px;
     padding: 20px;
     background-color: #f7f7f7;
     border-radius: 10px;
     border: 2px black solid;
-  }
+}
   
-  .testimonial p {
-    font-size: 18px;
-    line-height: 1.5;
-  }
+.testimonial p {
+  font-size: 18px;
+  line-height: 1.5;
+}
   
-  .testimonial .author {
-    font-size: 16px;
-    font-style: italic;
-    margin-top: 20px;
-  }
-  .testimonial img {
-    max-width: 300px;
-    max-height: 200px;
-    display: block;
-    margin: 0 auto;
-  }
+.testimonial .author {
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.testimonial img {
+  max-width: 300px;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
+}
   
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f1f1f1;
-    }
+footer {
+  text-align: center;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+footer ul{
+  list-style-type: none;
+  text-align: end;
+  display: block;
+  text-decoration: none;
+}
+footer a:visited{
+  color: inherit;
+}

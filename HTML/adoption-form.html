@@ -13,26 +13,7 @@
                 document.getElementById(elemId).innerHTML = hintMsg;
                 }
                 function display() {
-                        // Dispwin = window.open();
-                        // message ="<b><u>Personal Details: </u></b><br><br>";
-                        // message += "<b>Name: </b>" + document.adopt.fname.value + " " + document.adopt.lname.value + "<br><br>";
-                        // message += "<b>Phone: </b>" + document.adopt.phone.value + "<br><br>";
-                        // message += "<b>E-mail: </b>" + document.adopt.email.value + "<br><br>";
-                        // message += "<b>Address: </b>" + document.adopt.address.value + "<br><br>";
-                        // message +="<b><u>Pet's Details: </u></b>";
-                        // message += "<br><br> <b>Pet's Name: </b>" + document.adopt.petname.value + "<br><br>";
-                        // message += "<b>Pet's Age: </b>" + document.adopt.petage.value + "<br><br>";
-                        // message += "<b>Pet's Breed: </b>" + document.adopt.petbreed.value + "<br><br>";
-                        // message += "<b>Gender: </b>";
-                        // if (document.adopt.gender.value == 'Male') {
-                        //     message += "Male <br><br>";
-                        // } else if (document.adopt.gender.value == 'Female') {
-                        //     message+= "Female<br><br>";
-                        // } else {
-                        //     message+="Others<br><br>";
-                        // }
-                        // message += "<b>File: </b>" + document.adopt.signatureFile.value + "<br><br>";
-                        // Dispwin.document.write(message);
+
                         alert("Application Submitted Successfully")
                 }
                 function validateForm(){
@@ -113,7 +94,7 @@
             <h1 align="center">Adopt a res-cute!</h1>
             <img src="../Images/headerpic.png" style="display: block; margin-left: auto; margin-right: auto;" height="7%" width="7%">
             <br>
-            <form name="adopt" >
+            <form name="adopt" action="C:\xampp\htdocs\adoption_entry.php" method="post">
                 <table>
                 <tr>
                 <td><h2 style="color: white;"><b>ADOPTER'S DETAILS</b></h2></td>
@@ -173,32 +154,14 @@
             </table>         
             </form>
         </body>
-        <!-- <script>
-            var name = document.adopt.fname.value+document.adopt.lname.value;
-            var email = document.adopt.email.value;
-            var phone = document.adopt.phone.value;
-            var petname = document.adopt.petname.value;
-            var petage = document.adopt.petage.value;
-            var petbreed = document.adopt.petbreed.value;
-            const express = require('express');
-            const app = express();
-            const port = 5500;
-            app.post('/add', (req, res) => {
-            const sql = `INSERT INTO adoptionrequests VALUES ('${name}', '${email}', '${phone}',  '${petname}', '${petage}', '${petbreed}',)`;
-            connection.query(sql, (err, result) => {
-                if (err) throw err;
-                alert('Request Raised Successfuly!')
-                res.redirect('');
-            });
-            });
-
-            // Start the server
-            app.listen(port, () => {
-            console.log(`Server running at http://localhost:${port}`);
-            });
-        </script> -->
     </html>
     <footer>
         <p>&copy; 2023 Strays of Panvel. All Rights Reserved.</p>
+        <ul>
+            <li><a class="active" href="homepage.html">Home</a></li>
+            <li><a href="adoption-form.html">Adopt Now!</a></li>
+            <li><a href="photogallery.html">Gallery</a></li>
+            <li><a href="aboutus.html">About</a></li>
+        </ul>        
     </footer>
 </html>

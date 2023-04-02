@@ -3,15 +3,12 @@ navbar ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-/*    background-color: #DC3535;*/
     background-color:black ;
-
-/*    background-color: #0E0741;*/
+    display: flex;
   }
 navbar li {
     display: inline; 
     float: left; /* block elements inline*/
-    /* border-right: 1px solid #bbb; */
   }
   
 navbar  a {
@@ -25,15 +22,14 @@ navbar li a{ /*for text decoration*/
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
   }
   
 navbar li a:hover { /* hover*/
-/*    background-color: #ababb9 ;*/
       background-color: #E97777;
+      transition: 0.5s;
 
 }
 navbar .active{
-/*  background-color: #8236fd;*/
     background-color: #F49D1A;
-
 }
