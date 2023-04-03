@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rescue Form</title>
+	<link rel="icon" href="../Images/SOPIcon.ico">
+    <link rel="stylesheet" type="text/css" href="../CSS/main.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> function printError(elemId, hintMsg) {
+                document.getElementById(elemId).innerHTML = hintMsg;
+                }
+        function display() {
+
+            alert("Application Submitted Successfully")
+        }
+        function validateForm(){
+            var nameErr = phoneErr= true;
+            var name = document.rescueform.name.value;
+            var phone = document.rescueform.phone.value;
+            var dog_case = document.rescueform.dog_case.value;
+            var dog_image= document.rescueform.dog_name.value;
+            var location = document.rescueform.location.value;
+
+                    // Validate name
+                    if(name == "") {
+                        printError("nameErr", "Please enter your name");
+                    } else {
+                        var regex = /^[a-zA-Z\s]+$/;                
+                        if(regex.test(name) == false) {
+                            printError("nameErr", "Please enter a valid name");
+                        } else {
+                            printError("nameErr", "");
+                            nameErr = false;
+                        }
+                    }   
+
+                    // Validate mobile number
+                    if(phone == "") {
+                        printError("phoneErr", "Please enter your mobile number");
+                    } else {
+                        var regex = /^[1-9]\d{9}$/;
+                        if(regex.test(phone) === false) {
+                            printError("phoneErr", "Please enter a valid 10 digit mobile number");
+                        } else{
+                            printError("phoneErr", "");
+                            phoneErr = false;
+                        }
+                    }
+                    if (nameErr || phoneErr) {
+                         document.getElementById("submit").disabled = true;
+                    } else {
+                    document.getElementById("submit").disabled = false;
+                    }
+                    
+                };
+</script>
+</head>
+<body>
+	<header>
+      <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo1.png" width="8.5%"></a>
+      <navbar>
+	  <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a class="active" href="adoption-form.html">Adopt Now!</a></li>
+        <li><a href="photogallery.html">Gallery</a></li>
+        <li><a href="aboutus.html">About</a></li>
+      </ul>
+      </navbar>
+    </header>
+    <h1 align="center">Rescue Dog Adoption Form</h1>
+    <form name="rescueform" action="#" method="post">
+     <table>
+        <tr>
+          <td><label>Name:</label></td>
+          <td><input type="text" id="name" name="name" size="20" required onkeyup="validateForm();"></td>
+        </tr>
+        <tr>
+          <td><label>Phone:</label></td>
+          <td><input type="text" id="phone" name="phone" size="20" onkeyup="validateForm();"></td>
+        </tr>
+        <tr>
+          <td><label>Rescue Dog's Case:</label></td>
+          <td><textarea id="dog_case" name="dog_case" rows="4" cols="50" required onkeyup="validateForm();"></textarea></td>
+        </tr>
+        <tr>
+          <td><label>Rescue Dog's Image:</label></td>
+          <td><input type="file" id="dog_image" name="dog_image" onkeyup="validateForm();"></td>
+        </tr>
+        <tr>
+          <td><label>Location:</label></td>
+          <td><input type="text" id="location" name="location" required size="20" onkeyup="validateForm();"></td>
+       </tr>
+       <td><br></td>
+        <tr>
+	        <td align="left">
+	        <button type = "button" value="Submit" id = "submit" onclick="display();"> Submit </button>
+	        <button type = "reset" value="Reset">Reset </button></td>
+	    </tr>
+     </table>
+    </form>
+  </body>
+  <br>
+  <footer>
+        <p>&copy; 2023 Strays of Panvel. All Rights Reserved.</p>
+        <ul>
+            <li><a class="active" href="homepage.html">Home</a></li>
+            <li><a href="adoption-form.html">Adopt Now!</a></li>
+            <li><a href="photogallery.html">Gallery</a></li>
+            <li><a href="aboutus.html">About</a></li>
+        </ul>        
+    </footer>
+</html>
