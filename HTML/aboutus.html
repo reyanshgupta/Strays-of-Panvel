@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="volunteerApp">
     <head>
         <title>About us</title>
         <link rel="icon" href="../Images/SOPIcon.ico">
         <link rel="stylesheet" type="text/css" href="../CSS/main.css">
         <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
         <link rel="stylesheet" type="text/css" href="../CSS/form.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
         <style>
             iframe{
                 display: block;
@@ -26,7 +27,7 @@
             /*faq*/
             .faq {
             max-width: 600px;
-            margin: 5 auto;
+            margin: 0 auto;
             }
 
             .faq-question {
@@ -51,7 +52,6 @@
             display: block;
             }
         </style>
-
     </head>
     <body>
         <header>
@@ -70,10 +70,38 @@
         <iframe style="align-content: center  ;"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60363.16331364295!2d73.0792515891089!3d18.988953241027925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e83e1f23f23d%3A0xe3a106c431e3fd0a!2sPanvel%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1675486337865!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <br>
         <h2 align="center">Find us on Social Media</h2>
-        <!-- <ul> -->
         <a href="https://www.instagram.com/strays_of_panvel/" class="icon" target="_blank"><img class="center" src="../Images/instalogo.png" width="30px"></a>
-        <!-- </ul> -->
         <hr>
+    <div ng-controller="volunteerCtrl">
+      <h2>Find a Volunteer near you!</h2>
+      <input type="text" ng-model="search" placeholder="Search by location">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="volunteer in volunteers | filter:search">
+            <td>{{volunteer.name}}</td>
+            <td>{{volunteer.location}}</td>
+          </tr>
+        </tbody>
+      </table> 
+    </div> 
+    <script>
+      var app = angular.module('volunteerApp', []);
+  app.controller('volunteerCtrl', function($scope) {
+    $scope.volunteers = [
+      { name: 'John Smith', location: 'Khanda Colony' },
+      { name: 'Sarah Johnson', location: 'Kamothe' },
+      { name: 'Michael Brown', location: 'New Panvel' },
+      { name: 'Karen Davis', location: 'Old Panvel' },
+      { name: 'David Lee', location: 'Vichumbe' }
+    ];
+  });
+  </script>
     <div class="faq" align="center">
         <h2 align="center"><u><b>Frequently Asked Questions: </b></u></h2>
         <div class="faq-question">
