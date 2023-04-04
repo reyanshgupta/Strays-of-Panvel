@@ -33,22 +33,17 @@
             text-align: center;
         }
     </style>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> --> <script LANGUAGE = "JavaScript" type="text/Javascript">
+    <script LANGUAGE = "JavaScript" type="text/Javascript">
         function printError(elemId, hintMsg) {
                 document.getElementById(elemId).innerHTML = hintMsg;
                 }
-        function display() {
-
-            alert("Application Submitted Successfully")
-        }
         function validateForm(){
             var nameErr = phoneErr= true;
             var name = document.rescueform.name.value;
             var phone = document.rescueform.phone.value;
-            var dog_case = document.rescueform.dog_case.value;
-            var dog_image= document.rescueform.dog_name.value;
-            var location = document.rescueform.location.value;
-
+            // var dog_case = document.rescueform.dog_case.value;
+            // var dog_image= document.rescueform.dog_name.value;
+            // var location = document.rescueform.location.value;
                     // Validate name
                     if(name == "") {
                         printError("nameErr", "Please enter your name");
@@ -179,7 +174,7 @@
        <td><br></td>
         <tr>
             <td align="left">
-            <button type = "button" value="Submit" id = "submit" onclick="display();"> Submit </button>
+            <button type = "button" value="Submit" id = "submit"> Submit </button>
             <button type = "reset" value="Reset">Reset </button></td>
         </tr>
      </table>
