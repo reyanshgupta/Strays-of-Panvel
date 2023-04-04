@@ -5,30 +5,19 @@
     <link rel="icon" href="../Images/SOPIcon.ico">
     <link rel="stylesheet" type="text/css" href="../CSS/main.css">
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../CSS/form.css"> -->
     <link rel="stylesheet" type="text/css" href="../CSS/animations.css">
     <script>
         function validateForm() {
             var admin_id = document.forms["AdminLogin"]["admin_id"].value;
             var password = document.forms["AdminLogin"]["password"].value;
-
             var admin_id_regex = /^[a-zA-Z0-9]+$/; // only letters and numbers allowed
-            var password_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/; // at least 8 characters, one lowercase letter, one uppercase letter, and one number
-
             if (!admin_id_regex.test(admin_id)) {
                 alert("Please enter a valid Admin ID. Only letters and numbers are allowed.");
                 return false;
             }
-
-            if (!password_regex.test(password)) {
-                alert("Please enter a valid password. Password must be at least 8 characters long, contain one lowercase letter, one uppercase letter, and one number.");
-                return false;
-            }
         }
     </script>
-  
 </head>
-
 <body>
   <header>
         <a href="homepage.html"><img class="center" style="margin-bottom: 1%;" src="../Images/SOPLogo1.png" width="8.5%"></a>
@@ -45,21 +34,20 @@
   <h1 align="center">LOGIN</h1>
   <hr style="background-color:#F49D1A ; height: 3px; width: 6%;" align="center" >
   <br><br>
-  <form style="background-color:#20262E; width:30%; height:200px; margin-left:35%;" name="AdminLogin" action="/admin-login" method="post" align="center">
+  <form style="background-color:#20262E; width:30%; height:200px; margin-left:35%;" name="AdminLogin" action="admin-login.php" method="post" align="center">
   	<table style="margin: 18%;">
-  		<tr><td><label for="admin_id" style="color:white;">ADMIN ID: </label></td>
+  		<tr>
+            <td><label for="admin_id" style="color:white;">ADMIN ID: </label></td>
   			<td><input type="text" id="admin_id" name="admin_id"></td>
   		</tr>
-    		<tr>
+    	<tr>
   			<td><label for="password" style="color:white;">PASSWORD: </label></td>
   		    <td><input type="password" id="password" name="password"></td>
   		</tr>
-  		<br><br>
   		<tr>
-
-  		<td><input type="submit" value="Log in" onclick="validateForm();"></td>  	
-  	</tr>
-  </table>
+  		    <td><input type="submit" value="Log in" onclick="validateForm();"></td>  	
+  	    </tr>
+    </table>
 </form>
 <hr style="border: none; border-top: 4px solid black; margin: 20px 0;">
 <footer>

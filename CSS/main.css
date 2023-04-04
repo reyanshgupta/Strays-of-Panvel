@@ -23,19 +23,24 @@ h2{
 
 /* Using flexbox model*/
 .row {
-    display: flex;
+  display: flex;
 }
 
 .column50 {
-    flex: 50%;
+  flex: 50%;
 
 }
 
 .column33{
-    flex:33%;
-    margin: 13px;
-    border: solid black 2px;
-    padding: 5px;
+  flex:33%;
+  margin: 13px;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+div > button {
+  position: relative; 
+  top: 10%;
 }
 
 .left {
@@ -93,14 +98,6 @@ input[type="submit"]:hover {
     background-color: grey;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   }
-  
-  
-
-#columnbuttons{
-   position: relative; 
-   top: 10%;
-}
-
 .testimonial {
     margin: 50px auto;
     max-width: 500px;
@@ -122,7 +119,7 @@ input[type="submit"]:hover {
 }
 
 .testimonial img {
-  max-width: 300px;
+  max-width: 200px;
   max-height: 200px;
   display: block;
   margin: 0 auto;

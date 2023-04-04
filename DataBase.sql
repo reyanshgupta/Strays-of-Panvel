@@ -1,2 +1,4 @@
-CREATE TABLE `straysofpanvel`.`adminlogin` (`admin_id` VARCHAR(25) NOT NULL , `password` VARCHAR(25) NOT NULL , PRIMARY KEY (`admin_id`)) ENGINE = InnoDB;
+CREATE TABLE `straysofpanvel`.`AdminLogin` (`admin_id` VARCHAR(25) NOT NULL , `pass_word` VARCHAR(25) NOT NULL , PRIMARY KEY (`admin_id`)) ENGINE = InnoDB;
 CREATE TABLE `StraysOfPanvel`.`adoptionrequests` (`firstName` VARCHAR(30) NOT NULL , `lastName` VARCHAR(30) , `PhoneNumber` INT(15) NOT NULL , `Email` VARCHAR(30) NOT NULL , `primAddress` VARCHAR(255) NOT NULL , `PetName` VARCHAR(30) NOT NULL , `PetAge` INT(20) NOT NULL , `PetBreed` VARCHAR(30) , `Gender` VARCHAR(10) , PRIMARY KEY (`req_id`)) ENGINE = InnoDB;
+INSERT INTO `AdminLogin` (`admin_id`, `password`) VALUES ('reyansh', 'rey123');
+INSERT INTO `AdminLogin` (`admin_id`, `password`) VALUES ('khushi', 'khushi123')
