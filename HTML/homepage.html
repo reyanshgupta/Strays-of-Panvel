@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../CSS/imagegallery.css">
         <link rel="stylesheet" type="text/css" href="../CSS/animations.css">
         <link rel="stylesheet" type="text/css" href="../CSS/form.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     </head>
     <style>
         #joinus{
@@ -26,12 +27,18 @@
             z-index:0;
         }
         .overlay {
-            position:absolute;
-            top:1%;
-            left:25%;
-            z-index:1;
             text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+        
     </style>
     <script LANGUAGE = "JavaScript" type="text/Javascript">
         function printError(elemId, hintMsg) {
@@ -41,9 +48,6 @@
             var nameErr = phoneErr= true;
             var name = document.rescueform.name.value;
             var phone = document.rescueform.phone.value;
-            // var dog_case = document.rescueform.dog_case.value;
-            // var dog_image= document.rescueform.dog_name.value;
-            // var location = document.rescueform.location.value;
                     // Validate name
                     if(name == "") {
                         printError("nameErr", "Please enter your name");
@@ -95,7 +99,7 @@
                 <source src="../Images/puppy.mp4" type="video/mp4" >
             </video>
             <div class="overlay">
-                <h1 style="color:white; font-size: 70px; align-self: center; background-color: rgba(53, 53, 53, 0.2);">&nbsp; STRAYS OF PANVEL &nbsp;</h1>
+                <h1 style="color:white; font-size: 70px; align-self: center; font-family: Arial, Helvetica, sans-serif;">&nbsp; STRAYS OF PANVEL &nbsp;</h1>
             </div>
             <div style="position:absolute;bottom:5%;left:47%;z-index:1;">
                 <a href="volunteer.html" ><button id="joinus" style="animation: wiggle 2s linear infinite;">Join us!</button></a>
@@ -150,7 +154,7 @@
         <div class="row">
             <div class="column50">
     <h1 align="center">Rescue a dog in your vicinity</h1>
-    <form name="rescueform" action="#" method="post">
+    <form name="rescueform" action="rescue-request.php" method="post">
      <table>
         <tr>
           <td><label>Name:<i style="color:red">*</i></label></td>
@@ -159,12 +163,12 @@
         </tr>
         <tr>
           <td><label>Phone:<i style="color:red">*</i></label></td>
-          <td><input type="text" id="phone" name="phone" size="20" onkeyup="validateForm();"></td>
+          <td><input type="text" id="phone" name="phone" size="20" required onkeyup="validateForm();"></td>
           <td><span id="phoneErr" class="errormessage"></span></td>
         </tr>
         <tr>
-          <td><label>Rescue Dog's Case:<i style="color:red">*</i></label></td>
-          <td><textarea id="dog_case" name="dog_case" rows="4" cols="50" required onkeyup="validateForm();"></textarea></td>
+          <td><label for="dog_case">Rescue Dog's Case:<i style="color:red">*</i></label></td>
+          <td><textarea id="dogcase" name="dogcase" rows="4" cols="50" required onkeyup="validateForm();"></textarea></td>
         </tr>
         <tr>
           <td><label>Rescue Dog's Image:<i style="color:red">*</i></label></td>
@@ -172,12 +176,12 @@
         </tr>
         <tr>
           <td><label>Location:<i style="color:red">*</i></label></td>
-          <td><input type="text" id="location" name="location" required size="20" onkeyup="validateForm();"></td>
+          <td><input type="text" id="location" name="location" onkeyup="validateForm();"></td>
        </tr>
        <td><br></td>
         <tr>
             <td align="left">
-            <button type = "button" value="Submit" id = "submit"> Submit </button>
+            <input type = "submit" value="Submit" id = "submit" name="save">
             <button type = "reset" value="Reset">Reset </button></td>
         </tr>
      </table>
@@ -235,21 +239,55 @@
                       <p>Monkey is our lovable penguin friend who loves to play in the snow.</p>
                     </div>
                 </div>
+                <div class="gallery">
+                    <img src="../Images/7.jpg" alt="Monkey2">
+                    <div class="desc">Monkey</div>
+                    <div class="story">
+                      <h3>Meet Monkey!</h3>
+                      <p>Monkey is our lovable penguin friend who loves to play in the snow.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="../Images/8.jpg" alt="Snowball">
+                    <div class="desc">Snowball</div>
+                    <div class="story">
+                      <h3>Meet Snowball!</h3>
+                      <p>Snowball is our lovable penguin friend who loves to play in the snow.</p>
+                    </div>
+                </div>
             </div>
             <br><br><br> 
         </div>
         <a align="center" href="photogallery.html"><button style="background-color: black; color:white; margin-left: 45%; " id="button"> View More!</button></a>
     </body>
-
-    
     <hr style="border: none; border-top: 4px solid black; margin: 20px 0;">
     <footer>
+        <div class="footer-row">
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="adoption-form.html">Adopt Now!</a></li>
+              <li><a href="photogallery.html">Gallery</a></li>
+              <li><a href="aboutus.html">About</a></li>      
+              <li><a href="volunteer.html">Volunteering Form</a></li>
+              <li><a href="AdminLogin.html">Admin Login</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul>
+              <li>123 Main Street</li>
+              <li>Panvel, Maharashtra 410206</li>
+              <li>Phone: 983472323</li>
+              <li>Email: info@straysofpanvel.com</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/straysofpanvel/" target="_blank"><img src=../Images/instalogo.png></a>
+          </div>
+        </div>
         <p>&copy; 2023 Strays of Panvel. All Rights Reserved.</p>
-        <ul>
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="adoption-form.html">Adopt Now!</a></li>
-            <li><a href="photogallery.html">Gallery</a></li>
-            <li><a href="aboutus.html">About</a></li>
-        </ul>        
-    </footer>
+    </footer>   
 </html>

@@ -10,30 +10,7 @@
     <script LANGUAGE = "JavaScript" type="text/Javascript">
             function printError(elemId, hintMsg) {
                 document.getElementById(elemId).innerHTML = hintMsg;
-                }
-            function display() {
-                // Dispwin = window.open(); 
-                // message = "<br>Your application has been submitted successfully.";
-                // message +="<hr> <br>";
-                // message +="<b><u>Personal Details: </u></b><br><br>";
-                // message += "<b>Name: </b>" + document.volunteer.fname.value + " " + document.volunteer.mname.value + " " + document.volunteer.lname.value+ "<br><br>";
-                // message += "<b>Phone: </b>" + document.volunteer.phone.value + "<br><br>";
-                // message += "<b>E-mail: </b>" + document.volunteer.email.value+"<br><br>"; 
-                // message +="<b><u>Pet's Details: </u></b><br> <br>"
-                // message += "<b>Address: </b>" + document.volunteer.street.value + " , " + document.volunteer.city.value + " " + document.volunteer.zipcode.value+ "<br><br>";
-                // message += "<b>State: </b>" + document.volunteer.state.value + "<br><br>";
-                // message += "<b>Do you work with any other rescue organizations?: </b>" 
-                // if(document.getElementById('Yes').checked == true) {   
-                //     message += "Yes"; 
-                // } 
-                // else (document.getElementById('No').checked == true) 
-                // {
-                //     message+= "No"
-                // } 
-                // Dispwin.document.write(message);
-                alert("Request Submitted Successfully");
             }
-
                 function validateForm(){
                     var nameErr = emailErr = phoneErr= true;
                     var name = document.volunteer.fname.value+document.volunteer.lname.value;
@@ -103,7 +80,7 @@
     <h1 align="center">Volunteer With Us!
     <div><img src="../Images/headerpic2.png"  style="display: block; margin-left: auto; margin-right: auto; " height="25%" width="25%"></div>
     </h1>
-    <form name="volunteer">
+    <form name="volunteer" action="volunteerreq.php" method="POST">
         <table>
         <tr>
             <td><h2 style="color: white;"><b>PERSONAL DETAILS</b></h2><br></td>
@@ -141,7 +118,7 @@
             <td><input type="text" name="zipcode" size="6" /> </td>
         </tr>
         <tr>
-            <td><label>State:<i style="color:red">*</i> </label></td>
+            <td><label for="state">State:<i style="color:red">*</i> </label></td>
             <td><select name="state" >
                 <option value="State">States</option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -180,22 +157,41 @@
         </tr>
         <td><br></td>
         <tr>
-            
             <td align="left">
-            <button type = "button" value="Submit" id="submit" onclick="display();"> Submit </button>
+            <input type = "submit" value="Submit" id="submit" name="save">
             <button type = "reset" value="Reset">Reset </button></td>
         </tr>
         </table>
     </form>
     <hr style="border: none; border-top: 4px solid black; margin: 20px 0;">
     <footer>
+        <div class="footer-row">
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="adoption-form.html">Adopt Now!</a></li>
+              <li><a href="photogallery.html">Gallery</a></li>
+              <li><a href="aboutus.html">About</a></li>      
+              <li><a href="volunteer.html">Volunteering Form</a></li>
+              <li><a href="AdminLogin.html">Admin Login</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul>
+              <li>123 Main Street</li>
+              <li>Panvel, Maharashtra 410206</li>
+              <li>Phone: 983472323</li>
+              <li>Email: info@straysofpanvel.com</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/straysofpanvel/" target="_blank"><img src=../Images/instalogo.png></a>
+          </div>
+        </div>
         <p>&copy; 2023 Strays of Panvel. All Rights Reserved.</p>
-        <ul>
-            <li><a class="active" href="homepage.html">Home</a></li>
-            <li><a href="adoption-form.html">Adopt Now!</a></li>
-            <li><a href="photogallery.html">Gallery</a></li>
-            <li><a href="aboutus.html">About</a></li>
-        </ul>        
-      </footer>
+    </footer>   
 </body>
 </html>

@@ -58,15 +58,102 @@
         </tr>
         <?php endforeach; ?>
     </table>
-<hr style="border: none; border-top: 4px solid black; margin: 20px 0;">
+    <br>
+    <?php
+        $conn = mysqli_connect("localhost", "root", "", "straysofpanvel");
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "SELECT * FROM rescuerequest";
+        $result = mysqli_query($conn, $sql);
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_close($conn); 
+    ?>
+    <h2>Current Rescue Requests: </h2>
+    <table class="styledtable">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Rescue Case</th>
+            <th>Area of Rescue</th>
+        </tr>
+        <?php foreach ($rows as $row): ?>
+        <tr>
+            <td><?php echo $row['FullName']; ?></td>
+            <td><?php echo $row['PhoneNumber']; ?></td>
+            <td><?php echo $row['rescueCase']; ?></td>
+            <td><?php echo $row['areaofrescue']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+    <br>
+    <?php
+        $conn = mysqli_connect("localhost", "root", "", "straysofpanvel");
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "SELECT * FROM volunteer";
+        $result = mysqli_query($conn, $sql);
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_close($conn); 
+    ?>
+    <h2>Current Volunteering Requests: </h2>
+    <table class="styledtable">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Zipcode</th>
+            <th>States</th>
+            <th>Other Organisation</th>
+        </tr>
+        <?php foreach ($rows as $row): ?>
+        <tr>
+            <td><?php echo $row['firstName']; ?></td>
+            <td><?php echo $row['lastName']; ?></td>
+            <td><?php echo $row['phoneNumber']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['street']; ?></td>
+            <td><?php echo $row['city']; ?></td>
+            <td><?php echo $row['zipcode']; ?></td>
+            <td><?php echo $row['states']; ?></td>
+            <td><?php echo $row['otherorg']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <hr style="border: none; border-top: 4px solid black; margin: 20px 0;">
 <footer>
+    <div class="footer-row">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="adoption-form.html">Adopt Now!</a></li>
+          <li><a href="photogallery.html">Gallery</a></li>
+          <li><a href="aboutus.html">About</a></li>      
+          <li><a href="volunteer.html">Volunteering Form</a></li>
+          <li><a href="AdminLogin.html">Admin Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>123 Main Street</li>
+          <li>Panvel, Maharashtra 410206</li>
+          <li>Phone: 983472323</li>
+          <li>Email: info@straysofpanvel.com</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/straysofpanvel/" target="_blank"><img src=../Images/instalogo.png></a>
+      </div>
+    </div>
     <p>&copy; 2023 Strays of Panvel. All Rights Reserved.</p>
-    <ul>
-        <li><a class="active" href="homepage.html">Home</a></li>
-        <li><a href="adoption-form.html">Adopt Now!</a></li>
-        <li><a href="photogallery.html">Gallery</a></li>
-        <li><a href="aboutus.html">About</a></li>
-    </ul>        
-</footer>
+</footer>   
 </body>
 </html>
