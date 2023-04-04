@@ -6,61 +6,8 @@
         <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
         <link rel="stylesheet" type="text/css" href="../CSS/imagegallery.css">
         <link rel="stylesheet" type="text/css" href="../CSS/animations.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/table.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-        <style>
-            table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-            font-size: 1em;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-            }
-
-            th {
-            background-color: black;
-            color: #ffffff;
-            text-align: left;
-            font-weight: bold;
-            padding: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            }
-
-            td {
-            border-bottom: 1px solid #f2f2f2;
-            padding: 12px;
-            }
-
-            tr:hover {
-            background-color: #f5f5f5;
-            }
-
-            @media screen and (max-width: 600px) {
-            table {
-                border: 0;
-            }
-            table thead {
-                display: none;
-            }
-            table tr {
-                margin-bottom: 10px;
-                display: block;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-            table td {
-                border-bottom: none;
-                position: relative;
-                padding-left: 50%;
-            }
-            table td:before {
-                position: absolute;
-                top: 12px;
-                left: 6px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-            }
-    </style>
 </head>
 <body>
 <header>
@@ -85,7 +32,7 @@
         mysqli_close($conn); 
     ?>
     <h2>Current Adoption Requests: </h2>
-    <table>
+    <table class="styledtable">
         <tr>
             <th>First Name</th>
             <th>Last Name</th>

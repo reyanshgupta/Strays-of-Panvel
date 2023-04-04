@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../CSS/main.css">
         <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
         <link rel="stylesheet" type="text/css" href="../CSS/form.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/table.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
         <style>
             iframe{
@@ -72,10 +73,21 @@
         <h2 align="center">Find us on Social Media</h2>
         <a href="https://www.instagram.com/strays_of_panvel/" class="icon" target="_blank"><img class="center" src="../Images/instalogo.png" width="30px"></a>
         <hr>
-    <div ng-controller="volunteerCtrl">
+    <div ng-controller="volunteerCtrl" style="text-align: center;">
       <h2>Find a Volunteer near you!</h2>
-      <input type="text" ng-model="search" placeholder="Search by location">
-      <table>
+      <input type="text" ng-model="search" placeholder="Search by location" style="
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+        outline: none;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;">
+      <br>
+      <br>
+      <table class="styledtable" style="text-align: left;">
         <thead>
           <tr>
             <th>Name</th>
@@ -90,6 +102,7 @@
         </tbody>
       </table> 
     </div> 
+    <br>
     <script>
       var app = angular.module('volunteerApp', []);
   app.controller('volunteerCtrl', function($scope) {
@@ -131,7 +144,7 @@
         });
     </script><br>
     <p align="center"><b>If you have a question that isn't answered here, please fill out the form below:</b></p>
-    <form>
+    <form action="mailto: admin@sop.com" method="post" enctype="text/plain">
       <table>
         <tr>
           <td><label for="question">Your question:<i style="color:red">*</i></label><br></td>
