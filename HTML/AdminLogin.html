@@ -32,20 +32,22 @@
   </header>
   <br>
   <h1 align="center">LOGIN</h1>
-  <hr style="background-color:#F49D1A ; height: 3px; width: 6%;" align="center" >
-  <br><br>
-  <form style="background-color:#20262E; width:30%; height:200px; margin-left:35%;" name="AdminLogin" action="admin-login.php" method="post" align="center">
-  	<table style="margin: 18%;">
-  		<tr>
-            <td><label for="admin_id" style="color:white;">ADMIN ID: </label></td>
+  <hr style="background-color:#F49D1A ; height: 3px; width: 6%;" align="center"><br>
+  <form style="background-color:#20262E; position: relative; width:30%; height:225px; margin-left:35%;" name="AdminLogin" action="admin-login.php" method="post" align="center">
+  	<table align="center" style="margin-left: 10% auto; margin-top:20% auto;">
+  		<tr><td><br><br><br></td></tr>
+        <tr>
+            <td><label for="admin_id" style="color: white;">ADMIN ID: </label></td>
   			<td><input type="text" id="admin_id" name="admin_id"></td>
   		</tr>
+        <tr><td></td></tr>
     	<tr>
   			<td><label for="password" style="color:white;">PASSWORD: </label></td>
   		    <td><input type="password" id="password" name="password"></td>
   		</tr>
+        <tr><td><br></td></tr>
   		<tr>
-  		    <td><input type="submit" value="Log in" onclick="validateForm();"></td>  	
+  		    <td colspan=2><input type="submit" value="Log in" onclick="validateForm();"></td>  	
   	    </tr>
     </table>
 </form>
