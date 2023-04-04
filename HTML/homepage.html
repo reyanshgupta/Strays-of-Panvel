@@ -33,22 +33,17 @@
             text-align: center;
         }
     </style>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> --> <script LANGUAGE = "JavaScript" type="text/Javascript">
+    <script LANGUAGE = "JavaScript" type="text/Javascript">
         function printError(elemId, hintMsg) {
                 document.getElementById(elemId).innerHTML = hintMsg;
                 }
-        function display() {
-
-            alert("Application Submitted Successfully")
-        }
         function validateForm(){
             var nameErr = phoneErr= true;
             var name = document.rescueform.name.value;
             var phone = document.rescueform.phone.value;
-            var dog_case = document.rescueform.dog_case.value;
-            var dog_image= document.rescueform.dog_name.value;
-            var location = document.rescueform.location.value;
-
+            // var dog_case = document.rescueform.dog_case.value;
+            // var dog_image= document.rescueform.dog_name.value;
+            // var location = document.rescueform.location.value;
                     // Validate name
                     if(name == "") {
                         printError("nameErr", "Please enter your name");
@@ -110,9 +105,10 @@
             <div class="column33" style="text-align:center; background-color: #E97777;">
                 <h3 align="center">Adopt</h3></p>
                 <p align=center style="padding-left: 2px; padding-right: 2px;">
-                    We believe in #AdoptNotShop. Click the button below to fill an adoption form and get in touch with us to adopt a res-cute!
+                    We believe in #AdoptNotShop. Click the button below to fill an adoption form and get in touch with us to adopt a res-cute!<br>
+                    <br>
                 </p>  
-                <a align="center" href="adoption-form.html"><button id="columnbuttons">Adopt Now!</button></a>
+                <div style="text-align:center;"><a href="adoption-form.html"><button>Adopt Now!</button></a></div>
             </div>
             <div class="column33" style="text-align:center; background-color: #F89825;">
                 <h3 align=center>Donate/Fundraise</h3>
@@ -120,15 +116,17 @@
                     We raise funds for stray babies in need and help them get the treatment they deserve.
                     You can join us in the movement and help us help the strays get the life they deserve.
                 </p>
-                <a align="center" href="https://milaap.org/fundraisers/support-rescued-dogs-3" target="_blank"><button style="position:relative; top: 1%">Donate Now</button></a>
+                <div style="text-align:center;"><a href="https://milaap.org/fundraisers/support-rescued-dogs-3" target="_blank"><button>Donate Now</button></a></div>
             </div>
             <div class="column33" style="text-align:center; background-color: #7EB7E4" >
                 <h3 align=center>Volunteer</h3>
                 <p align=center style="padding-left: 2px; padding-right: 2px;">
                     We're a volunteer based organisation. We're always looking for people to join us and help in making our work easy! Please fill
                     the form below to register.
+                    <br>
+                    <br>
                 </p>
-                <a align="center" href="./volunteer.html"><button style="position:relative;top:         1%" id="columnbuttons">Volunteer with us!</button></a>
+                <div style="text-align:center;"><a href="./volunteer.html"><button>Volunteer with us!</button></a></div>
             </div>
         </div>
         <h2 align="center">Testimonials</h2>
@@ -151,7 +149,7 @@
         <br>  
         <div class="row">
             <div class="column50">
-                     <h1 align="center">Rescue Dog Adoption Form</h1>
+    <h1 align="center">Rescue a dog in your vicinity</h1>
     <form name="rescueform" action="#" method="post">
      <table>
         <tr>
@@ -179,7 +177,7 @@
        <td><br></td>
         <tr>
             <td align="left">
-            <button type = "button" value="Submit" id = "submit" onclick="display();"> Submit </button>
+            <button type = "button" value="Submit" id = "submit"> Submit </button>
             <button type = "reset" value="Reset">Reset </button></td>
         </tr>
      </table>
